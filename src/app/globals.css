@@ -1,26 +1,174 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b0f14;
+  --panel: #11161d;
+  --panel-muted: #151b23;
+
+  --border: #202938;
+  --border-subtle: #1a2130;
+
+  --text-primary: #e6edf3;
+  --text-secondary: #b6c2cf;
+  --text-muted: #7d8590;
+
+  --accent-green: #3fb950;
+  --accent-cyan: #39c5cf;
+  --accent-blue: #58a6ff;
+  --accent-purple: #bc8cff;
+
+  --terminal-bg: #0d1117;
+  --terminal-header: #161b22;
+
+  --glow-green: rgba(63, 185, 80, 0.15);
+  --glow-cyan: rgba(57, 197, 207, 0.15);
+  --glow-blue: rgba(88, 166, 255, 0.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  border-color: var(--border);
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2d3748;
+}
+
+/* ─── Animations ──────────────────────────────────────────────── */
+
+@keyframes terminal-blink {
+  0%,
+  100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-terminal-blink {
+  animation: terminal-blink 1s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+  background-size: 200% auto;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* ─── Gradient Text ───────────────────────────────────────────── */
+
+.gradient-text-green-cyan {
+  background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan-blue {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow Effects ────────────────────────────────────────────── */
+
+.glow-green {
+  box-shadow: 0 0 24px var(--glow-green);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 24px var(--glow-cyan);
+}
+
+.glow-blue {
+  box-shadow: 0 0 24px var(--glow-blue);
+}
+
+/* ─── Grid Background ─────────────────────────────────────────── */
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(32, 41, 56, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 41, 56, 0.4) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ─── Section Divider ─────────────────────────────────────────── */
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border) 30%,
+    var(--border) 70%,
+    transparent 100%
+  );
+  max-width: 80rem;
+  margin: 0 auto;
 }
