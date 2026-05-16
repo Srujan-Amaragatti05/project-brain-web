@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const GITHUB_URL = "https://github.com/Srujan-Amaragatti05/project-brain";
 const PYPI_URL = "https://pypi.org/project/project-brain-cli/";
@@ -50,11 +51,22 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1fr_auto_auto]">
           {/* Brand */}
           <div className="max-w-xs">
+          <div className="mb-1 flex items-center gap-2">
+            <Image
+              src="/images/logo.png"
+              alt="project-brain logo"
+              width={80}
+              height={20}
+              style={{ width: "auto", height: "auto" }}
+              className="h-14 object-contain"
+            />
             <div className="font-mono text-lg font-semibold text-[#E6EDF3]">
               <span className="text-[#3FB950]">project</span>
               <span className="text-[#7D8590]">-</span>
               <span>brain</span>
             </div>
+            
+          </div>
             <p className="mt-3 text-sm leading-relaxed text-[#7D8590]">
               Semantic intelligence for real codebases. AST-aware analysis,
               semantic diffs, and LLM-ready exports — 100% local.
