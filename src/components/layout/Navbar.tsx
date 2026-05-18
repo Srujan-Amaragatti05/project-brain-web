@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence, MotionConfig } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { href: "/#features", label: "Features" },
@@ -21,19 +20,19 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <MotionConfig reducedMotion="user">
-      <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[#0B0F14]/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[#0B0F14]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
-          <Image
-            src="/images/logo.png"
+          <img
+            src="/images/logo.svg"
             alt="project-brain logo"
-            width={60}
-            height={15}
-            style={{ width: "auto", height: "auto" }}
-            className="h-14 object-contain"
-            priority
+            width={40}
+            height={50}
+            style={{ width: "auto", height: "50px" }}
+            className="h-12 object-contain w-auto rounded-none"
+            loading="eager"
+            fetchPriority="high"
           />
           <span className="font-mono text-base font-semibold text-[#E6EDF3] transition-colors hover:text-white">
             <span className="text-[#3FB950]">project</span>
@@ -127,6 +126,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
       </header>
-    </MotionConfig>
   );
 }
