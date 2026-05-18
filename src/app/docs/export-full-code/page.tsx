@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CodeBlock, Callout, PageNav, DocHeading } from "@/components/docs/DocComponents";
+import { CodeBlock, Callout, PageNav, DocHeading, DocGif } from "@/components/docs/DocComponents";
 export const metadata: Metadata = { title: "brain export full_code — project-brain Docs" };
 
 export default function ExportFullCodePage() {
@@ -7,6 +7,7 @@ export default function ExportFullCodePage() {
     <article>
       <DocHeading badge="Export Commands" title="brain export full_code" subtitle="Packs the entire repository into a single AI-friendly flat text file." />
       <CodeBlock>{`brain export full_code`}</CodeBlock>
+      <DocGif src="/gifs/export.gif" alt="brain export" caption="Packing the repository codebase into a single AI-consumable flat context file" />
 
       <h2 className="mb-3 mt-8 text-lg font-semibold text-[#E6EDF3]">Output</h2>
       <CodeBlock>{`.brain/exports/full_code.txt`}</CodeBlock>

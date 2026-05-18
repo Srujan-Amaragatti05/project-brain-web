@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CodeBlock, PageNav, DocHeading } from "@/components/docs/DocComponents";
+import { CodeBlock, PageNav, DocHeading, DocGif } from "@/components/docs/DocComponents";
 export const metadata: Metadata = { title: "brain project doctor — project-brain Docs" };
 
 export default function ProjectDoctorPage() {
@@ -7,6 +7,7 @@ export default function ProjectDoctorPage() {
     <article>
       <DocHeading badge="Project Commands" title="brain project doctor" subtitle="Validates your entire environment and reports a clear status. Run this when something isn't working." />
       <CodeBlock>{`brain project doctor`}</CodeBlock>
+      <DocGif src="/gifs/doctor.gif" alt="brain project doctor" caption="Diagnosing workspace status, configurations, and AI service configurations" />
 
       <h2 className="mb-3 mt-8 text-lg font-semibold text-[#E6EDF3]">Checks performed</h2>
       <div className="space-y-2">

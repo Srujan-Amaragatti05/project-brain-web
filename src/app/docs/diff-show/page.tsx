@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CodeBlock, FlagTable, Callout, PageNav, DocHeading } from "@/components/docs/DocComponents";
+import { CodeBlock, FlagTable, Callout, PageNav, DocHeading, DocGif } from "@/components/docs/DocComponents";
 export const metadata: Metadata = { title: "brain diff show — project-brain Docs" };
 
 export default function DiffShowPage() {
@@ -12,6 +12,7 @@ export default function DiffShowPage() {
         { flag: "from_ref", type: "string", default: "HEAD~1", desc: "Source Git reference" },
         { flag: "to_ref",   type: "string", default: "HEAD",   desc: "Target Git reference" },
       ]} />
+      <DocGif src="/gifs/diff_show.gif" alt="brain diff show" caption="Visualizing semantic code changes at the function and file levels" />
 
       <h2 className="mb-3 mt-8 text-lg font-semibold text-[#E6EDF3]">Examples</h2>
       <CodeBlock>{`brain diff show                      # HEAD~1 → HEAD (default)

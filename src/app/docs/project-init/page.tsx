@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CodeBlock, Callout, PageNav, DocHeading } from "@/components/docs/DocComponents";
+import { CodeBlock, Callout, PageNav, DocHeading, DocGif } from "@/components/docs/DocComponents";
 export const metadata: Metadata = { title: "brain project init — project-brain Docs" };
 
 export default function ProjectInitPage() {
@@ -7,6 +7,7 @@ export default function ProjectInitPage() {
     <article>
       <DocHeading badge="Project Commands" title="brain project init" subtitle="Initializes project-brain in the current directory. Always the first command to run." />
       <CodeBlock>{`brain project init`}</CodeBlock>
+      <DocGif src="/gifs/quick_start.gif" alt="brain project" caption="Step-by-step CLI demo: init, analyze" />
 
       <h2 className="mb-3 mt-8 text-lg font-semibold text-[#E6EDF3]">What it creates</h2>
       <CodeBlock>{`.brain/              ← data directory
