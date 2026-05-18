@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     "LLM",
   ],
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: "/images/logo.svg",
+    apple: "/images/logo.svg",
   },
   openGraph: {
-    images: ["/images/logo.png"],
+    images: ["/images/logo.svg"],
   },
 };
 

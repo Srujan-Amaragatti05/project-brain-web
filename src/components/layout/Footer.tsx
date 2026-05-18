@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const GITHUB_URL = "https://github.com/Srujan-Amaragatti05/project-brain";
 const PYPI_URL = "https://pypi.org/project/project-brain-cli/";
@@ -52,13 +51,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-xs">
           <div className="mb-1 flex items-center gap-2">
-            <Image
-              src="/images/logo.png"
+            <img
+              src="/images/logo.svg"
               alt="project-brain logo"
-              width={80}
-              height={20}
-              style={{ width: "auto", height: "auto" }}
-              className="h-14 object-contain"
+              width={60}
+              height={70}
+              style={{ width: "auto", height: "70px" }}
+              className="h-20 w-auto rounded-none object-contain"
+              loading="lazy"
             />
             <div className="font-mono text-lg font-semibold text-[#E6EDF3]">
               <span className="text-[#3FB950]">project</span>
@@ -122,7 +122,7 @@ export default function Footer() {
           <span>
             © 2026 project-brain. Built by{" "}
             <a
-              href={GITHUB_URL}
+              href={"https://srujan-portfolio-eight.vercel.app/"}
               target="_blank"
               rel="noreferrer"
               className="text-[#B6C2CF] transition-colors hover:text-[#E6EDF3]"
