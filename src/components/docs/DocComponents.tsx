@@ -79,3 +79,35 @@ export function DocHeading({ badge, title, subtitle }: { badge?: string; title: 
     </div>
   );
 }
+
+export function DocGif({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <div className="my-8 overflow-hidden rounded-xl border border-[#30363D] bg-[#0B0F14] shadow-2xl">
+      {/* Terminal Header */}
+      <div className="flex items-center justify-between border-b border-[#30363D] bg-[#161B22] px-4 py-2.5 select-none">
+        <div className="flex items-center gap-1.5">
+          <span className="h-3 w-3 rounded-full bg-[#FF5F56]/90" />
+          <span className="h-3 w-3 rounded-full bg-[#FFBD2E]/90" />
+          <span className="h-3 w-3 rounded-full bg-[#27C93F]/90" />
+        </div>
+        <span className="font-mono text-[11px] text-[#7D8590]">{alt}</span>
+        <div className="w-12" />
+      </div>
+      {/* GIF Body */}
+      <div className="relative w-full bg-[#0D1117] overflow-hidden">
+        <img
+          src={src}
+          alt={alt}
+          style={{ marginBottom: "-35px" }}
+          className="w-full h-auto object-contain block"
+          loading="lazy"
+        />
+      </div>
+      {caption && (
+        <div className="border-t border-[#30363D] bg-[#0D1117]/50 px-4 py-2.5 text-center text-xs text-[#7D8590] leading-relaxed font-mono">
+          {caption}
+        </div>
+      )}
+    </div>
+  );
+}

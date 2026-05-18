@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CodeBlock, Callout, FlagTable, PageNav, DocHeading } from "@/components/docs/DocComponents";
+import { CodeBlock, Callout, FlagTable, PageNav, DocHeading, DocGif } from "@/components/docs/DocComponents";
 export const metadata: Metadata = { title: "brain project analyze — project-brain Docs" };
 
 export default function ProjectAnalyzePage() {
@@ -7,7 +7,7 @@ export default function ProjectAnalyzePage() {
     <article>
       <DocHeading badge="Project Commands" title="brain project analyze" subtitle="Recursively scans the repository, performs AST parsing, and stores results to .brain/data.json." />
       <CodeBlock>{`brain project analyze [path]`}</CodeBlock>
-
+      <DocGif src="/gifs/quick_start.gif" alt="brain project" caption="Step-by-step CLI demo: init and analyze" />
       <FlagTable flags={[
         { flag: "path", type: "string", default: ".", desc: "Root directory to analyze" },
       ]} />
