@@ -28,7 +28,7 @@ export default function OfflinePage() {
         ))}
       </ul>
 
-      <PageNav prev={{ href: "/docs/testllm", label: "brain testllm test" }} next={{ href: "/docs/api-keys", label: "API Key Setup" }} />
+      <PageNav prev={{ href: "/docs/testllm/brain_testllm_test", label: "brain testllm test" }} next={{ href: "/docs/api-keys", label: "API Key Setup" }} />
     </article>
   );
 }

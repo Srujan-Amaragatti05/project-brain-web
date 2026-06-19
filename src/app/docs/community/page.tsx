@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CodeBlock, PageNav, DocHeading, DocGif } from "@/components/docs/DocComponents";
+import { DOCS_BASE_URL } from "@/lib/docs";
 export const metadata: Metadata = { title: "brain community — project-brain Docs" };
 
 export default function CommunityPage() {
@@ -7,7 +8,7 @@ export default function CommunityPage() {
     <article>
       <DocHeading badge="Community" title="brain community" subtitle="Access all community resources from the CLI or directly via the links below." />
       <CodeBlock>{`brain community`}</CodeBlock>
-      <DocGif src="/gifs/community.gif" alt="brain community" caption="Viewing the community portal dashboard with links directly in the terminal" />
+      <DocGif src={`${DOCS_BASE_URL}/gifs/community.gif`} alt="brain community" caption="Viewing the community portal dashboard with links directly in the terminal" />
 
       <p className="mt-4 mb-6 text-sm text-[#B6C2CF]">Prints a panel with links to GitHub, PyPI, Discussions, and Issues. Also available as a global flag:</p>
       <CodeBlock>{`brain --feedback    # opens GitHub Discussions in your browser`}</CodeBlock>

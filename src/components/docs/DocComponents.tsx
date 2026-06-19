@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function CodeBlock({ children }: { children: string }) {
   return (
     <div className="overflow-x-auto rounded-xl border border-[#30363D] bg-[#0D1117] p-4">
@@ -14,7 +16,7 @@ export function Callout({
 }: {
   type: "note" | "warning" | "tip";
   children: React.ReactNode;
-}) {
+ }) {
   const s = {
     note:    { accent: "#58A6FF", bg: "#0d1320", label: "Note" },
     warning: { accent: "#F85149", bg: "#1a0d0d", label: "Warning" },
@@ -59,10 +61,10 @@ export function PageNav({ prev, next }: { prev?: { href: string; label: string }
   return (
     <div className="mt-14 flex justify-between border-t border-[var(--border)] pt-6 text-sm">
       {prev ? (
-        <a href={prev.href} className="text-[#7D8590] transition-colors hover:text-[#E6EDF3]">← {prev.label}</a>
+        <Link href={prev.href} className="text-[#7D8590] transition-colors hover:text-[#E6EDF3]">← {prev.label}</Link>
       ) : <span />}
       {next && (
-        <a href={next.href} className="text-[#7D8590] transition-colors hover:text-[#E6EDF3]">{next.label} →</a>
+        <Link href={next.href} className="text-[#7D8590] transition-colors hover:text-[#E6EDF3]">{next.label} →</Link>
       )}
     </div>
   );
@@ -95,6 +97,7 @@ export function DocGif({ src, alt, caption }: { src: string; alt: string; captio
       </div>
       {/* GIF Body */}
       <div className="relative w-full bg-[#0D1117] overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={src}
           alt={alt}

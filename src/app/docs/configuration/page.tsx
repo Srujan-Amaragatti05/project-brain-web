@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CodeBlock, Callout, PageNav, DocHeading } from "@/components/docs/DocComponents";
 export const metadata: Metadata = { title: "brain.yaml Configuration — project-brain Docs" };
 
@@ -58,9 +59,9 @@ output:
         ))}
       </div>
 
-      <Callout type="warning">Never store API keys in brain.yaml. Use environment variables only — see <a href="/docs/api-keys" className="text-[#58A6FF] underline underline-offset-4">API Key Setup</a>.</Callout>
+      <Callout type="warning">Never store API keys in brain.yaml. Use environment variables only — see <Link href="/docs/api-keys" className="text-[#58A6FF] underline underline-offset-4">API Key Setup</Link>.</Callout>
 
-      <PageNav prev={{ href: "/docs/quickstart", label: "Quick Start" }} next={{ href: "/docs/project-init", label: "brain project init" }} />
+      <PageNav prev={{ href: "/docs/quickstart", label: "Quick Start" }} next={{ href: "/docs/project/brain_project_init", label: "brain project init" }} />
     </article>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,15 +25,13 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
-          <img
+          <Image
             src="/images/logo.svg"
             alt="project-brain logo"
             width={40}
             height={50}
-            style={{ width: "auto", height: "50px" }}
             className="h-12 object-contain w-auto rounded-none"
-            loading="eager"
-            fetchPriority="high"
+            priority
           />
           <span className="font-mono text-base font-semibold text-[#E6EDF3] transition-colors hover:text-white">
             <span className="text-[#3FB950]">project</span>

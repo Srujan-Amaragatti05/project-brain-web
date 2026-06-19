@@ -22,7 +22,7 @@ source env/bin/activate
 
 # Install with dev extras (includes pytest + pytest-cov)
 pip install -e ".[dev]"`}</CodeBlock>
-        <Callout type="tip">Use <code className="font-mono text-xs">pip install -e ".[dev]"</code> (not just <code className="font-mono text-xs">pip install -e .</code>) to get pytest and pytest-cov included.</Callout>
+        <Callout type="tip">Use <code className="font-mono text-xs">pip install -e &quot;.[dev]&quot;</code> (not just <code className="font-mono text-xs">pip install -e .</code>) to get pytest and pytest-cov included.</Callout>
       </section>
 
       <section id="tests">
