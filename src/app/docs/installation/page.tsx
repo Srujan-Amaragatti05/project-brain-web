@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CodeBlock, Callout, PageNav, DocHeading } from "@/components/docs/DocComponents";
 export const metadata: Metadata = { title: "Installation — project-brain Docs" };
 
@@ -34,7 +35,7 @@ export default function InstallationPage() {
       </ul>
 
       <Callout type="note">
-        Are you a contributor? See the <a href="/docs/contributing" className="text-[#58A6FF] underline underline-offset-4 hover:text-[#79B8FF]">Contributing guide</a> for the source-install workflow (<code className="font-mono text-xs">pip install -e ".[dev]"</code>).
+        Are you a contributor? See the <Link href="/docs/contributing" className="text-[#58A6FF] underline underline-offset-4 hover:text-[#79B8FF]">Contributing guide</Link> for the source-install workflow (<code className="font-mono text-xs">pip install -e &quot;.[dev]&quot;</code>).
       </Callout>
 
       <PageNav prev={{ href: "/docs", label: "Overview" }} next={{ href: "/docs/quickstart", label: "Quick Start" }} />

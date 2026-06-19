@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const GITHUB_URL = "https://github.com/Srujan-Amaragatti05/project-brain";
 const PYPI_URL = "https://pypi.org/project/project-brain-cli/";
@@ -51,14 +52,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-xs">
           <div className="mb-1 flex items-center gap-2">
-            <img
+            <Image
               src="/images/logo.svg"
               alt="project-brain logo"
               width={60}
               height={70}
-              style={{ width: "auto", height: "70px" }}
               className="h-20 w-auto rounded-none object-contain"
-              loading="lazy"
             />
             <div className="font-mono text-lg font-semibold text-[#E6EDF3]">
               <span className="text-[#3FB950]">project</span>

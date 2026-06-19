@@ -57,7 +57,15 @@ export default function TerminalCard({
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    let active = true;
+    requestAnimationFrame(() => {
+      if (active) {
+        setIsMounted(true);
+      }
+    });
+    return () => {
+      active = false;
+    };
   }, []);
 
   const reduceMotion = isMounted ? shouldReduceMotion : false;
@@ -83,8 +91,15 @@ export default function TerminalCard({
       reduceMotion ||
       !firstCommand
     ) {
-      setTypedText(firstCommand);
-      return;
+      let active = true;
+      requestAnimationFrame(() => {
+        if (active) {
+          setTypedText(firstCommand);
+        }
+      });
+      return () => {
+        active = false;
+      };
     }
 
     let current = 0;
